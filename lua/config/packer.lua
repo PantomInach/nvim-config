@@ -46,4 +46,5 @@ return require("packer").startup(function(use)
     use { "terrortylor/nvim-comment" }
     use { 'nvim-lualine/lualine.nvim' }
     use { "nvim-tree/nvim-tree.lua" }
+    use { "lukas-reineke/indent-blankline.nvim" }
 end)

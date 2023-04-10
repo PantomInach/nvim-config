@@ -14,6 +14,7 @@ This is my neovim config. Nothing more to say.
 * [comment](https://github.com/terrortylor/nvim-comment)
 * [lualine](https://github.com/nvim-lualine/lualine.nvim)
 * [tree](https://github.com/nvim-tree/nvim-tree.lua)
+* [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 
 ## Dependencies 
 * [ripgrep](https://github.com/BurntSushi/ripgrep)

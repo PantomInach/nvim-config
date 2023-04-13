@@ -22,6 +22,9 @@ require("telescope").setup({
         diagnostics = {
             theme = "dropdown",
         },
+        current_buffer_fuzzy_find = {
+            theme = "dropdown",
+        },
     },
     extensions = {
         fzf = {
@@ -38,7 +41,8 @@ local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>fF', builtin.find_files, {})
 vim.keymap.set('n', '<leader>ff', builtin.git_files, {})
 vim.keymap.set('n', '<leader>fb', builtin.git_branches, {})
-vim.keymap.set('n', '<leader>fw', builtin.live_grep, {})
+-- vim.keymap.set('n', '<leader>fw', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fw', builtin.current_buffer_fuzzy_find, {})
 vim.keymap.set('n', '<leader>fW', function()
     require("telescope.builtin").live_grep {
         additionla_args = function(args)

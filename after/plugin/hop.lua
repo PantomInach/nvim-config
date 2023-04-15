@@ -7,5 +7,5 @@ require("hop").setup({
 	jump_on_sole_occurence = true,
 	case_sensitive = false,
 	multi_window = false,
-	hint_offset = -1,
+	hint_offset = 0,
 })

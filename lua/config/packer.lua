@@ -48,5 +48,9 @@ return require("packer").startup(function(use)
     use { "nvim-tree/nvim-tree.lua" }
     use { "lukas-reineke/indent-blankline.nvim" }
     use { "folke/zen-mode.nvim" }
-    use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
+    use({ 'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" } })
+    use {
+        'pianocomposer321/yabs.nvim',
+        requires = { 'nvim-lua/plenary.nvim' }
+    }
 end)

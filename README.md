@@ -16,6 +16,7 @@ This is my neovim config. Nothing more to say.
 * [tree](https://github.com/nvim-tree/nvim-tree.lua)
 * [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 * [zen-mode](https://github.com/folke/zen-mode.nvim)
+* [yabs](https://github.com/pianocomposer321/yabs.nvim)
 
 # Dependencies 
 ## General Dependencies 

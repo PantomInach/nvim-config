@@ -20,6 +20,7 @@ vim.keymap.set("n", "Q", "<nop>")
 
 -- Better saving
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
+vim.keymap.set("n", "<leader>W", "<cmd>w!<cr>")
 
 -- Move and resize windows
 vim.keymap.set("n", "<S-Left>", "<C-w>h")

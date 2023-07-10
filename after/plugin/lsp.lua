@@ -2,6 +2,13 @@ local lsp = require('lsp-zero').preset({})
 
 lsp.preset("recommended")
 
+lsp.ensure_installed({
+    "rust_analyzer",
+    "lua_ls",
+    "pylsp",
+    "ltex",
+    "texlab",
+})
 -- (Optional) Configure lua language server for neovim
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 require('lspconfig').pylsp.setup({
@@ -9,20 +16,13 @@ require('lspconfig').pylsp.setup({
         pylsp = {
             plugins = {
                 jedi = {
-                    enviroment = "/usr/bin/python"
+                    enviroment = "/usr/bin/python3"
                 }
             }
         }
     }
 })
 
-lsp.ensure_installed({
-	"rust_analyzer",
-	"lua_ls",
-	"pylsp",
-	"ltex",
-	"texlab",
-})
 
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }

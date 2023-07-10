@@ -63,3 +63,8 @@ git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data
 ## After installing Packer
 Open nvim and run `:PackerSync` to download all plugins.
 Close and reopen `nvim` so that TreeSitter and the LSP's can be setup.
+
+# Additional Setup Steps
+## Pylsp
+For autocompletion and other lsp features of imported modules an option must be set extra.
+In `~/.local/share/nvim/mason/packages/python-lsp-server/venv/pyvenv.cnf` set `include-system-site-packages = false` to `true`.

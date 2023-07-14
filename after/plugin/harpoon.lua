@@ -1,3 +1,10 @@
+require("harpoon").setup({
+    save_on_change = true,
+    enter_on_sendcmd = true,
+    tmux_autoclose_windows = false,
+    tabline = false,
+})
+
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 

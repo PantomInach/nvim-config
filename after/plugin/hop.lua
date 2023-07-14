@@ -1,6 +1,3 @@
-vim.keymap.set("n", "<C-f>", ":HopWord<cr>")
-vim.keymap.set("n", "<C-p>", ":HopPattern<cr>")
-
 require("hop").setup({
 	keys = "abcdefghijklmnopqrstuvwxyz",
 	quit_key = "<SPC>",
@@ -9,3 +6,6 @@ require("hop").setup({
 	multi_window = false,
 	hint_offset = 0,
 })
+
+vim.keymap.set("n", "<C-f>", ":HopWord<cr>")
+vim.keymap.set("n", "<C-p>", ":HopPattern<cr>")

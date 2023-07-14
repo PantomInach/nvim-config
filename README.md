@@ -17,6 +17,7 @@ This is my neovim config. Nothing more to say.
 * [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 * [zen-mode](https://github.com/folke/zen-mode.nvim)
 * [yabs](https://github.com/pianocomposer321/yabs.nvim)
+* [obsidian](https://github.com/epwalsh/obsidian.nvim)
 
 # Dependencies 
 ## General Dependencies 
@@ -66,5 +67,7 @@ Close and reopen `nvim` so that TreeSitter and the LSP's can be setup.
 
 # Additional Setup Steps
 ## Pylsp
-For autocompletion and other lsp features of imported modules an option must be set extra.
-In `~/.local/share/nvim/mason/packages/python-lsp-server/venv/pyvenv.cnf` set `include-system-site-packages = false` to `true`.
+For autocompletion and other lsp features of imported modules an option must be set extra. In `~/.local/share/nvim/mason/packages/python-lsp-server/venv/pyvenv.cnf` set `include-system-site-packages = false` to `true`.
+
+## Obsidian
+[Obsidian](https://obsidian.md/) is a note-taking app based on markdown files. To configure the vault location set the path in the `options.lua` file, which can be found in the root of the nvim config.

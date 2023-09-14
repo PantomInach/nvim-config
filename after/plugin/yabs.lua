@@ -36,16 +36,6 @@ require('yabs'):setup({
                     type = "shell",
                     output = out,
                 },
-                debug_run = {
-                    command = "RUST_LOG=debug cargo run",
-                    type = "shell",
-                    output = out,
-                },
-                debug_test = {
-                    command = "RUST_LOG=debug cargo test",
-                    type = "shell",
-                    output = out,
-                },
             },
         },
     },

@@ -36,6 +36,31 @@ require('yabs'):setup({
                     type = "shell",
                     output = out,
                 },
+                format = {
+                    command = "cargo fmt",
+                    type = "shell",
+                    output = out,
+                },
+            },
+        },
+        zig = {
+            default_task = "run",
+            tasks = {
+                run = {
+                    command = "zig run",
+                    type = "shell",
+                    output = out,
+                },
+                test = {
+                    command = "zig test",
+                    type = "shell",
+                    output = out,
+                },
+                build = {
+                    command = "zig build",
+                    type = "shell",
+                    output = out,
+                },
             },
         },
     },

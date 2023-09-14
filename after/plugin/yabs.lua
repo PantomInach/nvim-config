@@ -36,13 +36,28 @@ require('yabs'):setup({
                     type = "shell",
                     output = out,
                 },
-                debug_run = {
-                    command = "RUST_LOG=debug cargo run",
+                format = {
+                    command = "cargo fmt",
                     type = "shell",
                     output = out,
                 },
-                debug_test = {
-                    command = "RUST_LOG=debug cargo test",
+            },
+        },
+        zig = {
+            default_task = "run",
+            tasks = {
+                run = {
+                    command = "zig run",
+                    type = "shell",
+                    output = out,
+                },
+                test = {
+                    command = "zig test",
+                    type = "shell",
+                    output = out,
+                },
+                build = {
+                    command = "zig build",
                     type = "shell",
                     output = out,
                 },

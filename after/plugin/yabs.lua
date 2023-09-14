@@ -1,4 +1,4 @@
-local out = "buffer"
+local out = "quickfix"
 
 require('telescope').load_extension('yabs')
 require('yabs'):setup({

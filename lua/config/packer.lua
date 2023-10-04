@@ -54,4 +54,5 @@ return require("packer").startup(function(use)
         requires = { 'nvim-lua/plenary.nvim' }
     }
     use { 'karb94/neoscroll.nvim' }
+    use { 'WhoIsSethDaniel/mason-tool-installer.nvim' }
 end)

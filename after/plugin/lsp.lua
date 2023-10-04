@@ -1,3 +1,5 @@
+local fn = vim.fn
+local g = vim.g
 local lsp = require('lsp-zero').preset({})
 
 lsp.preset("recommended")
@@ -12,14 +14,37 @@ lsp.ensure_installed({
 })
 -- (Optional) Configure lua language server for neovim
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+
+-- Python LSP setup
 require('lspconfig').pylsp.setup({
     filetypes = { "python" },
     settings = {
         pylsp = {
             plugins = {
                 jedi = {
-                    enviroment = "/usr/bin/python3"
+                    -- enviroment = "/usr/bin/python3",
+                    enviroment = g.pylsp_jedi_environment or fn.exepath('python'),
                 },
+                -- formatter
+                black = { enabled = true },
+                autopep8 = { enabled = false },
+                yapf = { enabled = false },
+                -- linter
+                pylint = { enabled = true, executable = "pylint" },
+                pylint = { enabled = false },
+                ruff = { enabled = false },
+                pyflakes = { enabled = false },
+                pycodestyle = { enabled = false },
+                -- type checker
+                pylsp_mypy = {
+                    enabled = true,
+                    report_progress = true,
+                    live_mode = false,
+                },
+                -- auto-completion
+                jedi_completion = { fuzzy = true },
+                -- import sorting
+                isort = { enabled = true },
             },
         },
         formatCommand = { 'black' },

@@ -68,3 +68,5 @@ Close and reopen `nvim` so that TreeSitter and the LSP's can be setup.
 # Additional Setup Steps
 ## Pylsp
 For autocompletion and other lsp features of imported modules an option must be set extra. In `~/.local/share/nvim/mason/packages/python-lsp-server/venv/pyvenv.cnf` set `include-system-site-packages = false` to `true`.
+
+Ensure the following pip packages are installed: `"python-lsp-server[all]", python-lsp-isort, pylsp-mypy, python-lsp-black`

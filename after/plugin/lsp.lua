@@ -16,41 +16,28 @@ lsp.ensure_installed({
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 -- Python LSP setup
-require('lspconfig').pylsp.setup({
-    filetypes = { "python" },
+lsp.configure('pylsp', {
     settings = {
         pylsp = {
             plugins = {
-                jedi = {
-                    -- enviroment = "/usr/bin/python3",
-                    enviroment = g.pylsp_jedi_environment or fn.exepath('python'),
-                },
-                -- formatter
                 black = { enabled = true },
-                autopep8 = { enabled = false },
-                yapf = { enabled = false },
-                -- linter
+                autopep8 = { enabled = true },
+                yapf = { enabled = true },
                 pylint = { enabled = true, executable = "pylint" },
-                pylint = { enabled = false },
-                ruff = { enabled = false },
-                pyflakes = { enabled = false },
-                pycodestyle = { enabled = false },
-                -- type checker
-                pylsp_mypy = {
+                ruff = { enabled = true },
+                pyflakes = { enabled = true },
+                pycodestyle = {
                     enabled = true,
-                    report_progress = true,
-                    live_mode = false,
+                    ignore = ("E501"),
                 },
-                -- auto-completion
+                pylsp_mypy = { enabled = true, report_progress = true, live_mode = false },
                 jedi_completion = { fuzzy = true },
-                -- import sorting
-                isort = { enabled = true },
-            },
+                isort = { enabled = true }
+            }
         },
         formatCommand = { 'black' },
     }
 })
-
 
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }

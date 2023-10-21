@@ -1,6 +1,11 @@
 # nvim-config
 This is my neovim config. Nothing more to say.
 
+# TODOs
+- [ ] Texlab
+- [ ] Cmp next entry to work with arrow keys
+- [ ] Other
+
 ## Plugins
 * [lsp-zero](https://github.com/VonHeikemen/lsp-zero.nvim)
 * [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
@@ -39,31 +44,7 @@ For grammar and spell checking [ltex](https://github.com/vigoux/ltex-ls.nvim) is
 It is required that Java 11+ is installed to run this lsp.
 All other dependencies will be installed automatically.
 
-### Scala Metals LSP
-To use the scala metals lsp some extra things need to be done. 
-Install:
-* Java 8+
-* cs
-* sbt
-* Run `cs install metals`
-
 # Setup
-
-## Init Packer
-Install Packer with the following command
-
-### Unix
-```bash
-git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-```
-### Windows
-```powershell
-git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
-```
-
-## After installing Packer
-Open nvim and run `:PackerSync` to download all plugins.
-Close and reopen `nvim` so that TreeSitter and the LSP's can be setup.
 
 # Additional Setup Steps
 ## Pylsp

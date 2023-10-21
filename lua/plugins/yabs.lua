@@ -76,9 +76,10 @@ return {
                 },
             },
         })
-
-        vim.keymap.set("n", "<leader>rd", ":YabsDefaultTask<CR>")
-        vim.keymap.set("n", "<leader>rr", ":YabsTask ")
-        vim.keymap.set("n", "<leader>rs", ":Telescope yabs tasks<CR>")
-    end
+    end,
+    keys = {
+        { "<leader>rd", ":YabsDefaultTask<CR>" },
+        { "<leader>rr", ":YabsTask<CR>" },
+        { "<leader>rs", ":Telescope yabs tasks<CR>" },
+    }
 }

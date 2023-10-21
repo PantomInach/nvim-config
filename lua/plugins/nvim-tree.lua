@@ -7,7 +7,8 @@ return {
                 dotfiles = false,
             }
         })
-
-        vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
-    end
+    end,
+    keys = {
+        { "<leader>e", ":NvimTreeToggle<CR>" }
+    },
 }

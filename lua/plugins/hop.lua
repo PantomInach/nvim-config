@@ -10,8 +10,9 @@ return {
             multi_window = false,
             hint_offset = 0,
         })
-
-        vim.keymap.set("n", "<C-f>", ":HopWord<cr>")
-        vim.keymap.set("n", "<C-p>", ":HopPattern<cr>")
-    end
+    end,
+    keys = {
+        { "<C-f>", ":HopWord<CR>" },
+        { "<C-p>", ":HopPattern<CR>" },
+    }
 }

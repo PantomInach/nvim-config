@@ -1,5 +1,6 @@
 return {
     'hrsh7th/nvim-cmp',
+    lazy = false,
     config = function()
         local cmp = require("cmp")
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -12,5 +13,5 @@ return {
         cmp.setup({
             mapping = cmp_mappings
         })
-    end
+    end,
 }

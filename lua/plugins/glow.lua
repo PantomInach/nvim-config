@@ -4,5 +4,8 @@ return {
         require("glow").setup({
             vim.keymap.set("n", "<leader>G", ":Glow<CR>")
         })
-    end
+    end,
+    keys = {
+        { "<leader>G", ":Glow<CR>" }
+    }
 }

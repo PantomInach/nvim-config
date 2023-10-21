@@ -11,8 +11,9 @@ return {
             comment_chunk_text_object = "ic",
             hook = nil,
         })
-
-        vim.keymap.set("n", "<leader>/", ":CommentToggle<CR>")
-        vim.keymap.set("v", "/", ":'<,'>CommentToggle<CR>")
-    end
+    end,
+    keys = {
+        { "<leader>/", ":CommentToggle<CR>" },
+        { "/",         ":'<,'>CommentToggle<CR>", mode = "v" }
+    }
 }

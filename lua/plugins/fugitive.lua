@@ -1,8 +1,6 @@
 return {
     'tpope/vim-fugitive',
     config = function()
-        vim.keymap.set("n", "<leader>gg", vim.cmd.Git)
-
         local fugitive_autogrp = vim.api.nvim_create_augroup("fugitive_autogrp", {})
         local autocmd = vim.api.nvim_create_autocmd
         autocmd("BufWinEnter", {
@@ -25,5 +23,8 @@ return {
                 vim.keymap.set("n", "<leader>t", ":Git push -u origin", opts)
             end,
         })
-    end
+    end,
+    keys = {
+        { "<leader>gg", vim.cmd.Git }
+    }
 }

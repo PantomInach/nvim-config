@@ -56,30 +56,8 @@ return {
             }
         })
 
-        local cmp = require("cmp")
-        local cmp_select = { behavior = cmp.SelectBehavior.Select }
-        -- local cmp_mappings = lsp.defaults.cmp_mappings({
-        --     ["<CR>"] = cmp.mapping.confirm({ select = false }),
-        --     ["<C-j>"] = cmp.mapping.select_next_item(cmp_select),
-        --     ["<C-k>"] = cmp.mapping.select_prev_item(cmp_select),
-        -- })
-        --
-        -- Should be done by nvim-cmp
-        -- lsp.setup_nvim_cmp({
-        --     mapping = cmp_mappings
-        -- })
-
         lsp.on_attach(function(client, bufnr)
             local opts = { buffer = bufnr, remap = false }
-            vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-            vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-            vim.keymap.set("n", "<leader>ld", function() vim.diagnostic.open_float() end, opts)
-            vim.keymap.set("n", "<leader>lh", function() vim.diagnostic.goto_prev() end, opts)
-            vim.keymap.set("n", "<leader>ll", function() vim.diagnostic.goto_next() end, opts)
-            vim.keymap.set("n", "<leader>la", function() vim.lsp.buf.code_action() end, opts)
-            vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.rename() end, opts)
-            vim.keymap.set("n", "<leader>ls", function() vim.lsp.buf.signature_help() end, opts)
-            vim.keymap.set("n", "<leader>lf", function() vim.lsp.buf.format() end, opts)
             lsp.default_keymaps({ buffer = bufnr })
         end)
 
@@ -106,9 +84,22 @@ return {
                 },
             })
         })
-        vim.keymap.set("n", "<leader>mb", "<cmd>TexlabBuild<CR>")
-        vim.keymap.set("n", "<leader>mf", "<cmd>TexlabForward<CR>")
 
         lsp.setup()
     end,
+    keys = {
+        -- TexLab
+        { "<leader>mb", "<cmd>TexlabBuild<CR>" },
+        { "<leader>mf", "<cmd>TexlabForward<CR>" },
+        -- diagnostic
+        { "gd",         function() vim.lsp.buf.definition() end, },
+        { "K",          function() vim.lsp.buf.hover() end, },
+        { "<leader>ld", function() vim.diagnostic.open_float() end, },
+        { "<leader>lh", function() vim.diagnostic.goto_prev() end, },
+        { "<leader>ll", function() vim.diagnostic.goto_next() end, },
+        { "<leader>la", function() vim.lsp.buf.code_action() end, },
+        { "<leader>lr", function() vim.lsp.buf.rename() end, },
+        { "<leader>ls", function() vim.lsp.buf.signature_help() end, },
+        { "<leader>lf", function() vim.lsp.buf.format() end, },
+    },
 }

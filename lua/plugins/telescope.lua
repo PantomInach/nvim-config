@@ -44,23 +44,23 @@ return {
             },
         })
         require("telescope").load_extension("fzf")
+    end,
+    keys = {
 
-        local builtin = require('telescope.builtin')
-        vim.keymap.set('n', '<leader>fF', builtin.find_files, {})
-        vim.keymap.set('n', '<leader>ff', builtin.git_files, {})
-        vim.keymap.set('n', '<leader>fb', builtin.git_branches, {})
-        vim.keymap.set('n', '<leader>fw', builtin.live_grep, {})
-        -- vim.keymap.set('n', '<leader>fw', builtin.current_buffer_fuzzy_find, {})
-        vim.keymap.set('n', '<leader>fW', function()
+        { '<leader>fF', function() require("telescope.builtin").find_files() end, },
+        { '<leader>ff', function() require("telescope.builtin").git_files() end, },
+        { '<leader>fb', function() require("telescope.builtin").git_branches() end, },
+        { "<leader>fW", function()
             require("telescope.builtin").live_grep {
                 additionla_args = function(args)
                     return vim.list_extend(args, { "--hidden", "--no-ignore" })
                 end
             }
-        end)
-        vim.keymap.set('n', 'gr', builtin.lsp_references, {}) -- Does not override default binding
-        vim.keymap.set("n", "<leader>lR", builtin.lsp_references, {})
-        vim.keymap.set("n", "<leader>lw", builtin.lsp_dynamic_workspace_symbols, {})
-        vim.keymap.set("n", "<leader>lD", builtin.diagnostics, {})
-    end
+        end },
+        { '<leader>fw', function() require("telescope.builtin").live_grep() end, },
+        { 'gr',         function() require("telescope.builtin").lsp_references() end, }, -- Does not override default binding
+        { "<leader>lR", function() require("telescope.builtin").lsp_references() end, },
+        { "<leader>lw", function() require("telescope.builtin").lsp_dynamic_workspace_symbols() end, },
+        { "<leader>lD", function() require("telescope.builtin").diagnostics() end, },
+    }
 }

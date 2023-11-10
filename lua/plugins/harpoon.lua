@@ -8,24 +8,22 @@ return {
             tmux_autoclose_windows = false,
             tabline = false,
         })
-
-        local mark = require("harpoon.mark")
-        local ui = require("harpoon.ui")
-
-        vim.keymap.set("n", "<leader>a", mark.add_file)
-        vim.keymap.set("n", "<leader>A", mark.clear_all)
-        vim.keymap.set("n", "<leader>h", ui.toggle_quick_menu)
-        vim.keymap.set("n", "<C-h>", ui.nav_prev)
-        vim.keymap.set("n", "<C-l>", ui.nav_next)
-        vim.keymap.set("n", "<leader>1", function() ui.nav_file(1) end)
-        vim.keymap.set("n", "<leader>2", function() ui.nav_file(2) end)
-        vim.keymap.set("n", "<leader>3", function() ui.nav_file(3) end)
-        vim.keymap.set("n", "<leader>4", function() ui.nav_file(4) end)
-        vim.keymap.set("n", "<leader>5", function() ui.nav_file(5) end)
-        vim.keymap.set("n", "<leader>6", function() ui.nav_file(6) end)
-        vim.keymap.set("n", "<leader>7", function() ui.nav_file(7) end)
-        vim.keymap.set("n", "<leader>8", function() ui.nav_file(8) end)
-        vim.keymap.set("n", "<leader>9", function() ui.nav_file(9) end)
-        vim.keymap.set("n", "<leader>0", function() ui.nav_file(10) end)
     end,
+    keys = {
+        { "<leader>a", function() require("harpoon.mark").add_file() end, },
+        { "<leader>A", function() require("harpoon.mark").clear_all() end, },
+        { "<leader>h", function() require("harpoon.ui").toggle_quick_menu() end, },
+        { "<C-h>",     function() require("harpoon.ui").nav_prev() end, },
+        { "<C-l>",     function() require("harpoon.ui").nav_next() end, },
+        { "<leader>1", function() require("harpoon.ui").nav_file(1) end, },
+        { "<leader>2", function() require("harpoon.ui").nav_file(2) end, },
+        { "<leader>3", function() require("harpoon.ui").nav_file(3) end, },
+        { "<leader>4", function() require("harpoon.ui").nav_file(4) end, },
+        { "<leader>5", function() require("harpoon.ui").nav_file(5) end, },
+        { "<leader>6", function() require("harpoon.ui").nav_file(6) end, },
+        { "<leader>7", function() require("harpoon.ui").nav_file(7) end, },
+        { "<leader>8", function() require("harpoon.ui").nav_file(8) end, },
+        { "<leader>9", function() require("harpoon.ui").nav_file(9) end, },
+        { "<leader>0", function() require("harpoon.ui").nav_file(10) end, },
+    },
 }

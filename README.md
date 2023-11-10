@@ -23,6 +23,7 @@ This is my neovim config. Nothing more to say.
 * [zen-mode](https://github.com/folke/zen-mode.nvim)
 * [yabs](https://github.com/pianocomposer321/yabs.nvim)
 * [mason-tool-installer](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim)
+* [neoscroll](https://github.com/karb94/neoscroll.nvim)
 
 # Dependencies 
 ## General Dependencies 

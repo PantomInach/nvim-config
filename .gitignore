@@ -41,3 +41,4 @@ luac.out
 
 plugin
 !after/plugin
+lazy-lock.json

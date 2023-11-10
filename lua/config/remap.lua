@@ -16,7 +16,6 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
-vim.keymap.set("n", "Q", "<nop>")
 
 -- Better saving
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
@@ -35,3 +34,10 @@ vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>")
 -- Indent in visual mode with tab
 vim.keymap.set("v", "<S-Tab>", "<gv")
 vim.keymap.set("v", "<Tab>", ">gv")
+
+-- Unbind keymaps
+vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", "q", "<nop>")
+-- For neoscroll
+vim.keymap.set("n", "<C-d>", "<nop>")
+vim.keymap.set("n", "<C-u>", "<nop>")

@@ -4,7 +4,6 @@ return {
     config = function()
         require('nvim-treesitter.configs').setup({
             ensure_installed = { "lua", "vim", "query", "python", "rust", "latex", "java", "bash", "markdown",
-                "scala",
                 "zig" },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)

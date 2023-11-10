@@ -1,9 +1,6 @@
 # nvim-config
 This is my neovim config. Nothing more to say.
 
-# TODOs
-- [ ] Texlab
-
 ## Plugins
 * [lsp-zero](https://github.com/VonHeikemen/lsp-zero.nvim)
 * [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)

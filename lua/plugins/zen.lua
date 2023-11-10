@@ -61,6 +61,6 @@ return {
         }
     end,
     keys = {
-        { "Z", ":ZenMode<CR>" },
+        { "<leader>Z", ":ZenMode<CR>" },
     },
 }

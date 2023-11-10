@@ -3,8 +3,6 @@ This is my neovim config. Nothing more to say.
 
 # TODOs
 - [ ] Texlab
-- [ ] Cmp next entry to work with arrow keys
-- [ ] Other
 
 ## Plugins
 * [lsp-zero](https://github.com/VonHeikemen/lsp-zero.nvim)

@@ -13,8 +13,12 @@ return {
         { 'hrsh7th/nvim-cmp' },
         { 'hrsh7th/cmp-nvim-lsp' },
         { 'L3MON4D3/LuaSnip' },
+        { 'simrat39/rust-tools.nvim' },
     },
     config = function()
+        require("mason-lspconfig").setup({
+            ensure_installed = { "rust_analyzer" },
+        })
         local lsp = require('lsp-zero').preset({})
 
         lsp.preset("recommended")
@@ -56,10 +60,9 @@ return {
             }
         })
 
-        lsp.on_attach(function(client, bufnr)
-            local opts = { buffer = bufnr, remap = false }
-            lsp.default_keymaps({ buffer = bufnr })
-        end)
+        -- Rust LSP setup
+        local rust_tool = require("rust-tools")
+        rust_tool.setup()
 
         lsp.format_on_save({
             format_opts = {

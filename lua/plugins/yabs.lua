@@ -2,7 +2,7 @@ return {
     'pianocomposer321/yabs.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
-        local out = 'quickfix'
+        local output_format = 'quickfix'
 
         require('telescope').load_extension('yabs')
         require('yabs'):setup({

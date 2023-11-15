@@ -14,25 +14,27 @@ return {
         { 'hrsh7th/cmp-nvim-lsp' },
         { 'L3MON4D3/LuaSnip' },
         { 'simrat39/rust-tools.nvim' },
+        { 'vigoux/ltex-ls.nvim' },
     },
     config = function()
-        require("mason-lspconfig").setup({
-            ensure_installed = { "rust_analyzer" },
-        })
         local lsp = require('lsp-zero').preset({})
 
         lsp.preset("recommended")
 
-        -- Done by mason-lspconfig
-        -- lsp.ensure_installed({
-        --     "rust_analyzer",
-        --     "lua_ls",
-        --     "pylsp",
-        --     "ltex",
-        --     "texlab",
-        --     "zls",
-        -- })
-        -- -- (Optional) Configure lua language server for neovim
+        lsp.format_on_save({
+            format_opts = {
+                async = false,
+                timeout_ms = 2000,
+            },
+            servers = {
+                ['lua_ls'] = { 'lua' },
+                ['rust_analyzer'] = { 'rust' },
+                ['pylsp'] = { 'python3' },
+                ['zls'] = { 'zig' },
+            },
+        })
+
+        -- (Optional) Configure lua language server for neovim
         lspconfig = require('lspconfig')
         lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
 
@@ -64,19 +66,7 @@ return {
         local rust_tool = require("rust-tools")
         rust_tool.setup()
 
-        lsp.format_on_save({
-            format_opts = {
-                async = false,
-                timeout_ms = 2000,
-            },
-            servers = {
-                ['lua_ls'] = { 'lua' },
-                ['rust_analyzer'] = { 'rust' },
-                ['pylsp'] = { 'python3' },
-                ['zls'] = { 'zig' },
-            },
-        })
-
+        -- Latex LSPs setup
         lspconfig.texlab.setup({
             settings = {
                 texlab = {
@@ -85,6 +75,7 @@ return {
                 },
             },
         })
+        lspconfig.ltex.setup({})
 
         lsp.setup()
     end,

@@ -35,7 +35,7 @@ return {
         })
 
         -- (Optional) Configure lua language server for neovim
-        lspconfig = require('lspconfig')
+        local lspconfig = require('lspconfig')
         lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
 
         -- Python LSP setup

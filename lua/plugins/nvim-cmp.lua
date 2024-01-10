@@ -10,8 +10,17 @@ return {
             ["<UP>"] = cmp.mapping.select_prev_item(cmp_select),
         }
 
+        local border_opts = {
+            border = "rounded",
+            winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+        }
+
         cmp.setup({
-            mapping = cmp_mappings
+            mapping = cmp_mappings,
+            window = {
+                completion = cmp.config.window.bordered(border_opts),
+                documentation = cmp.config.window.bordered(border_opts),
+            }
         })
     end,
 }

@@ -47,8 +47,13 @@ return {
                             type = "shell",
                             output = output_format,
                         },
-                        format = {
-                            command = "cargo fmt",
+                        bench = {
+                            command = "cargo bench",
+                            type = "shell",
+                            output = output_format,
+                        },
+                        run_release = {
+                            command = "cargo run --release",
                             type = "shell",
                             output = output_format,
                         },

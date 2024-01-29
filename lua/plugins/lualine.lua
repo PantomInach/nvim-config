@@ -42,7 +42,7 @@ return {
                 -- Disable sections and component separators
                 component_separators = '',
                 section_separators = '',
-                theme = 'decay',
+                -- theme = 'decay',
             },
             sections = {
                 -- these are to remove the defaults

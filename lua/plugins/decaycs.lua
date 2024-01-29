@@ -23,5 +23,6 @@ return {
             nvim_tree = { contrast = true, },
             override = override
         }
+        vim.cmd("colorscheme decayce")
     end
 }

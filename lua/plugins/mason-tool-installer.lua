@@ -7,7 +7,6 @@ return {
                 'mypy',
                 'rstcheck',
                 'black',
-                'rustfmt',
             },
             auto_update = false,
             run_on_start = true,

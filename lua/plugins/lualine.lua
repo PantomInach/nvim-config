@@ -8,19 +8,33 @@ return {
 
         -- Color table for highlights
         -- stylua: ignore
+        local decay = require("decay.core").get_colors("decayce")
         local colors = {
-            bg       = '#1c252c',
-            fg       = '#b6beca',
-            yellow   = '#ffeba6',
-            cyan     = '#90daff',
-            darkblue = '#70a5eb',
-            green    = '#78dba9',
-            orange   = '#c68aee',
-            violet   = '#e2a6ff',
-            magenta  = '#c68aee',
-            blue     = '#70a5eb',
-            red      = '#e05f65',
+            bg       = decay.background,
+            fg       = decay.forground,
+            yellow   = decay.yellow,
+            cyan     = decay.cyan,
+            darkblue = decay.blue,
+            green    = decay.green,
+            orange   = decay.orange,
+            violet   = decay.lavender,
+            magenta  = decay.magenta,
+            blue     = decay.brightblue,
+            red      = decay.red,
         }
+        -- local colors = {
+        --     bg       = '#1c252c',
+        --     fg       = '#b6beca',
+        --     yellow   = '#ffeba6',
+        --     cyan     = '#90daff',
+        --     darkblue = '#70a5eb',
+        --     green    = '#78dba9',
+        --     orange   = '#c68aee',
+        --     violet   = '#e2a6ff',
+        --     magenta  = '#c68aee',
+        --     blue     = '#70a5eb',
+        --     red      = '#e05f65',
+        -- }
 
         local conditions = {
             buffer_not_empty = function()
@@ -42,7 +56,7 @@ return {
                 -- Disable sections and component separators
                 component_separators = '',
                 section_separators = '',
-                -- theme = 'decay',
+                theme = 'auto',
             },
             sections = {
                 -- these are to remove the defaults

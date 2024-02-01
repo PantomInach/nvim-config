@@ -1,11 +1,9 @@
 return {
     'decaycs/decay.nvim',
     name = 'decay',
+    lazy = false,
     config = function()
-        local colors = require('decay.core').get_colors("decayce")
-        local override = {
-            FloatBorder = { fg = colors.forgroud, bg = colors.background },
-        }
+        local colors_decayce = require('decay.core').get_colors("decayce")
         -- require("decay").setup {
         --     style = "default",
         --     nvim_tree = { contrast = true, },
@@ -20,9 +18,10 @@ return {
         -- }
         require("decay").setup {
             style = "decayce",
-            nvim_tree = { contrast = true, },
-            override = override
+            -- nvim_tree = { contrast = true, },
+            override = {
+                FloatBorder = { fg = colors_decayce.forgroud, bg = colors_decayce.background },
+            }
         }
-        vim.cmd("colorscheme decayce")
     end
 }

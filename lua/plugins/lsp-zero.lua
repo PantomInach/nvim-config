@@ -15,7 +15,6 @@ return {
         { 'L3MON4D3/LuaSnip' },
         { 'simrat39/rust-tools.nvim' },
         { 'vigoux/ltex-ls.nvim' },
-        { 'nvimtools/none-ls.nvim' },
     },
     config = function()
         local lsp = require('lsp-zero').preset('recommended')
@@ -73,21 +72,20 @@ return {
                 pylsp = {
                     plugins = {
                         black = { enabled = true },
-                        autopep8 = { enabled = true },
-                        yapf = { enabled = true },
+                        autopep8 = { enabled = false },
+                        yapf = { enabled = false },
                         pylint = { enabled = false },
-                        ruff = { enabled = true },
+                        ruff = { enabled = false },
                         pyflakes = { enabled = true },
                         pycodestyle = {
                             enabled = true,
-                            ignore = ("E501"),
+                            ignore = { "E501", "W503" },
                         },
-                        pylsp_mypy = { enabled = true, report_progress = true, live_mode = false },
+                        pylsp_mypy = { enabled = true, report_progress = true, live_mode = true },
                         jedi_completion = { fuzzy = true },
                         isort = { enabled = true }
                     }
                 },
-                -- formatCommand = { 'black' },
             }
         })
 
@@ -107,34 +105,6 @@ return {
         lspconfig.ltex.setup({})
 
         lsp.setup()
-
-        -- Null-ls setup
-        local null_ls = require('null-ls')
-        local null_opts = lsp.build_options('null-ls', {})
-        local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
-        null_ls.setup({
-            on_attach = function(client, bufnr)
-                null_opts.on_attach(client, bufnr)
-                -- Format on save
-                if client.supports_method("textDocument/formatting") then
-                    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-                    vim.api.nvim_create_autocmd("BufWritePre", {
-                        group = augroup,
-                        buffer = bufnr,
-                        callback = function()
-                            -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-                            -- on later neovim version, you should use vim.lsp.buf.format({ async = false }) instead
-                            vim.lsp.buf.format({ async = false })
-                        end,
-                    })
-                end
-            end,
-            sources = {
-                null_ls.builtins.formatting.black,
-                null_ls.builtins.diagnostics.mypy,
-            }
-        })
     end,
     keys = {
         -- TexLab

@@ -20,6 +20,7 @@ This is my neovim config. Nothing more to say.
 * [oil](https://github.com/stevearc/oil.nvim)
 * [trouble](https://github.com/folke/trouble.nvim)
 * [no-neck-pain.nvim](https://github.com/shortcuts/no-neck-pain.nvim)
+* [conform.nvim](https://github.com/stevearc/conform.nvim)
 
 # Dependencies 
 ## General Dependencies 

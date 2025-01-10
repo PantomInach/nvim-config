@@ -3,7 +3,8 @@ return {
     version = '0.1.4',
     dependencies = {
         { 'nvim-lua/plenary.nvim' },
-        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+        { 'rafi/telescope-thesaurus.nvim' },
     },
     config = function()
         require("telescope").setup({
@@ -40,7 +41,8 @@ return {
                     override_generic_sorter = true,
                     override_file_sorter = true,
                     case_mode = "smart_case",
-                }
+                },
+                thesaurus = { provider = 'freedictionaryapi' },
             },
         })
         require("telescope").load_extension("fzf")
@@ -62,5 +64,7 @@ return {
         { "<leader>lR", function() require("telescope.builtin").lsp_references() end, },
         { "<leader>lw", function() require("telescope.builtin").lsp_dynamic_workspace_symbols() end, },
         { "<leader>lD", function() require("telescope.builtin").diagnostics() end, },
+        -- thesaurus
+        { "<leader>lt", "<cmd>Telescope thesaurus lookup<CR>" }
     }
 }

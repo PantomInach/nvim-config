@@ -36,3 +36,5 @@ vim.g.autoformat_enabled = true
 vim.g.icons_enabled = true
 
 vim.g.have_nerd_font = true
+
+vim.cmd("colorscheme decay")

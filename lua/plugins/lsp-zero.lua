@@ -52,12 +52,12 @@ return {
         lsp.format_on_save({
             format_opts = {
                 async = false,
-                timeout_ms = 2000,
+                timeout_ms = 1000,
             },
             servers = {
                 ['lua_ls'] = { 'lua' },
                 ['rust_analyzer'] = { 'rust' },
-                ['zls'] = { 'zig' },
+                -- ['zls'] = { 'zig' },
             },
         })
 
@@ -74,14 +74,14 @@ return {
                         black = { enabled = true },
                         autopep8 = { enabled = false },
                         yapf = { enabled = false },
-                        pylint = { enabled = false },
+                        pylint = { enabled = true },
                         ruff = { enabled = false },
                         pyflakes = { enabled = true },
                         pycodestyle = {
                             enabled = true,
                             ignore = { "E501", "W503" },
                         },
-                        pylsp_mypy = { enabled = true, report_progress = true, live_mode = true },
+                        pylsp_mypy = { enabled = true, report_progress = true, live_mode = false },
                         jedi_completion = { fuzzy = true },
                         isort = { enabled = true }
                     }

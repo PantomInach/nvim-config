@@ -40,6 +40,3 @@ vim.keymap.set("v", "<Tab>", ">gv")
 -- Unbind keymaps
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "q", "<nop>")
--- For neoscroll
-vim.keymap.set("n", "<C-d>", "<nop>")
-vim.keymap.set("n", "<C-u>", "<nop>")

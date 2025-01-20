@@ -43,11 +43,3 @@ For grammar and spell checking [ltex](https://github.com/vigoux/ltex-ls.nvim) is
 
 It is required that Java 11+ is installed to run this lsp.
 All other dependencies will be installed automatically.
-
-# Setup
-
-# Additional Setup Steps
-## Pylsp
-For autocompletion and other lsp features of imported modules an option must be set extra. In `~/.local/share/nvim/mason/packages/python-lsp-server/venv/pyvenv.cnf` set `include-system-site-packages = false` to `true`.
-
-Ensure the following pip packages are installed: `"python-lsp-server[all]", python-lsp-isort, pylsp-mypy, python-lsp-black`

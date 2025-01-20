@@ -22,6 +22,7 @@ This is my neovim config. Nothing more to say.
 * [no-neck-pain.nvim](https://github.com/shortcuts/no-neck-pain.nvim)
 * [conform.nvim](https://github.com/stevearc/conform.nvim)
 * [telescope-thesaurus.nvim](https://github.com/rafi/telescope-thesaurus.nvim)
+* [mini.surround](https://github.com/echasnovski/mini.surround)
 
 # Dependencies 
 ## General Dependencies 

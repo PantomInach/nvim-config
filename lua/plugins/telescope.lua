@@ -1,6 +1,6 @@
 return {
     'nvim-telescope/telescope.nvim',
-    version = '0.1.4',
+    version = '0.1.8',
     dependencies = {
         { 'nvim-lua/plenary.nvim' },
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
@@ -11,28 +11,28 @@ return {
             defaults = {},
             pickers = {
                 find_files = {
-                    theme = "dropdown",
+                    -- theme = "dropdown",
                 },
                 git_files = {
-                    theme = "dropdown"
+                    -- theme = "dropdown"
                 },
                 git_branches = {
-                    theme = "dropdown",
+                    -- theme = "dropdown",
                 },
                 live_grep = {
-                    theme = "dropdown",
+                    -- theme = "dropdown",
                 },
                 lsp_references = {
-                    theme = "dropdown",
+                    -- theme = "dropdown",
                 },
                 lsp_dynamic_workspace_symbols = {
-                    theme = "dropdown",
+                    -- theme = "dropdown",
                 },
                 diagnostics = {
-                    theme = "dropdown",
+                    -- theme = "dropdown",
                 },
                 current_buffer_fuzzy_find = {
-                    theme = "dropdown",
+                    -- theme = "dropdown",
                 },
             },
             extensions = {
@@ -48,7 +48,6 @@ return {
         require("telescope").load_extension("fzf")
     end,
     keys = {
-
         { '<leader>fF', function() require("telescope.builtin").find_files() end, },
         { '<leader>ff', function() require("telescope.builtin").git_files() end, },
         { '<leader>fb', function() require("telescope.builtin").git_branches() end, },

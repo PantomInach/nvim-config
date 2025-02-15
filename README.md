@@ -24,6 +24,7 @@ This is my neovim config. Nothing more to say.
 * [telescope-thesaurus.nvim](https://github.com/rafi/telescope-thesaurus.nvim)
 * [mini.surround](https://github.com/echasnovski/mini.surround)
 * [neorg](https://github.com/nvim-neorg/neorg)
+* [nabla](https://github.com/jbyuki/nabla.nvim)
 
 # Dependencies 
 ## General Dependencies 

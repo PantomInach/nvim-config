@@ -23,6 +23,7 @@ This is my neovim config. Nothing more to say.
 * [conform.nvim](https://github.com/stevearc/conform.nvim)
 * [telescope-thesaurus.nvim](https://github.com/rafi/telescope-thesaurus.nvim)
 * [mini.surround](https://github.com/echasnovski/mini.surround)
+* [neorg](https://github.com/nvim-neorg/neorg)
 
 # Dependencies 
 ## General Dependencies 

@@ -1,6 +1,7 @@
 return {
     'VonHeikemen/lsp-zero.nvim',
     lazy = false,
+    branch = "v2.x",
     dependencies = {
         { 'neovim/nvim-lspconfig' },
         {
@@ -103,6 +104,8 @@ return {
             },
         })
         lspconfig.ltex.setup({})
+
+        lspconfig.julials.setup({})
 
         lsp.setup()
     end,

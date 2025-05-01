@@ -25,6 +25,7 @@ This is my neovim config. Nothing more to say.
 * [mini.surround](https://github.com/echasnovski/mini.surround)
 * [neorg](https://github.com/nvim-neorg/neorg)
 * [nabla](https://github.com/jbyuki/nabla.nvim)
+* [blink.cmp](https://github.com/Saghen/blink.cmp)
 
 # Dependencies 
 ## General Dependencies 

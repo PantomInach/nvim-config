@@ -11,8 +11,8 @@ return {
             end
         },
         { 'williamboman/mason-lspconfig.nvim' },
-        { 'hrsh7th/nvim-cmp' },
-        { 'hrsh7th/cmp-nvim-lsp' },
+        -- { 'hrsh7th/nvim-cmp' },
+        -- { 'hrsh7th/cmp-nvim-lsp' },
         { 'L3MON4D3/LuaSnip' },
         { 'simrat39/rust-tools.nvim' },
         { 'vigoux/ltex-ls.nvim' },
@@ -20,33 +20,33 @@ return {
     config = function()
         local lsp = require('lsp-zero').preset('recommended')
 
-        local cmp = require('cmp')
-        local cmp_action = require('lsp-zero').cmp_action()
-        local cmp_select = { behavior = cmp.SelectBehavior.Select }
+        -- local cmp = require('cmp')
+        -- local cmp_action = require('lsp-zero').cmp_action()
+        -- local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         local border_opts = {
             border = "rounded",
             winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
         }
 
-        cmp.setup({
-            mapping = cmp.mapping.preset.insert({
-                -- `Enter` key to confirm completion
-                ['<CR>'] = cmp.mapping.confirm({ select = false }),
-
-                -- Up and down navigation
-                ["<DOWN>"] = cmp.mapping.select_next_item(cmp_select),
-                ["<UP>"] = cmp.mapping.select_prev_item(cmp_select),
-
-                -- Scroll up and down in the completion documentation
-                ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-                ['<C-d>'] = cmp.mapping.scroll_docs(4),
-            }),
-            window = {
-                completion = cmp.config.window.bordered(border_opts),
-                documentation = cmp.config.window.bordered(border_opts),
-            }
-        })
+        -- cmp.setup({
+        --     mapping = cmp.mapping.preset.insert({
+        --         -- `Enter` key to confirm completion
+        --         ['<CR>'] = cmp.mapping.confirm({ select = false }),
+        --
+        --         -- Up and down navigation
+        --         ["<DOWN>"] = cmp.mapping.select_next_item(cmp_select),
+        --         ["<UP>"] = cmp.mapping.select_prev_item(cmp_select),
+        --
+        --         -- Scroll up and down in the completion documentation
+        --         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+        --         ['<C-d>'] = cmp.mapping.scroll_docs(4),
+        --     }),
+        --     window = {
+        --         completion = cmp.config.window.bordered(border_opts),
+        --         documentation = cmp.config.window.bordered(border_opts),
+        --     }
+        -- })
 
         lsp.preset("recommended")
 

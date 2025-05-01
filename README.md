@@ -2,7 +2,6 @@
 This is my neovim config. Nothing more to say.
 
 ## Plugins
-* [lsp-zero](https://github.com/VonHeikemen/lsp-zero.nvim)
 * [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 * [telescope](https://github.com/nvim-telescope/telescope.nvim)
 * [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)  
@@ -26,6 +25,7 @@ This is my neovim config. Nothing more to say.
 * [neorg](https://github.com/nvim-neorg/neorg)
 * [nabla](https://github.com/jbyuki/nabla.nvim)
 * [blink.cmp](https://github.com/Saghen/blink.cmp)
+* [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
 # Dependencies 
 ## General Dependencies 

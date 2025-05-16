@@ -2,10 +2,10 @@ return {
     'neovim/nvim-lspconfig',
     lazy = false,
     dependencies = {
-        { 'williamboman/mason.nvim', opts = {}, lazy = false },
-        'williamboman/mason-lspconfig.nvim',
+        { 'mason-org/mason.nvim', opts = {}, lazy = false },
+        'mason-org/mason-lspconfig.nvim',
         'WhoIsSethDaniel/mason-tool-installer.nvim',
-        { 'j-hui/fidget.nvim',       opts = {} },
+        { 'j-hui/fidget.nvim',    opts = {} },
         'saghen/blink.cmp',
     },
     config = function()
@@ -95,7 +95,11 @@ return {
         local capabilities = require('blink.cmp').get_lsp_capabilities()
 
         local servers = {
-            rust_analyzer = {},
+            rust_analyzer = {
+                on_attach = function(client, bufnr)
+                    vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+                end
+            },
             julials = {},
             pylsp = {
                 settings = {
@@ -118,7 +122,6 @@ return {
                     },
                 }
             },
-            ltex = {},
             texlab = {
                 settings = {
                     texlab = {
@@ -127,6 +130,7 @@ return {
                     },
                 },
             },
+            ltex = {},
             zls = {},
             lua_ls = {
                 settings = {
@@ -145,27 +149,22 @@ return {
             'rstcheck',
             'mypy',
             'black',
-            'latexindent',
-            'ltex-ls-plus'
+            -- 'latexindent',
+            -- 'ltex-ls-plus'
         })
         require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
-        require('mason-lspconfig').setup {
-            ensure_installed = {},
-            automatic_installation = false,
-            handlers = {
-                function(server_name)
-                    local server = servers[server_name] or {}
-                    server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-                    require('lspconfig')[server_name].setup(server)
-                end,
-            },
-        }
+        -- Installed LSPs are configured and enabled automatically with mason-lspconfig
+        -- The loop below is for overriding the default configuration of LSPs with the ones in the servers table
+        for server_name, config in pairs(servers) do
+            vim.lsp.config(server_name, config)
+            vim.lsp.enable(server_name)
+        end
     end,
     keys = {
         -- TexLab
-        { "<leader>mb", "<cmd>TexlabBuild<CR>" },
-        { "<leader>mf", "<cmd>TexlabForward<CR>" },
+        { "<leader>mb", "<cmd>LspTexlabBuild<CR>" },
+        { "<leader>mf", "<cmd>LspTexlabForward<CR>" },
         -- diagnostic
         { "gd",         function() vim.lsp.buf.definition() end, },
         { "K",          function() vim.lsp.buf.hover() end, },

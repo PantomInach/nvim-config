@@ -19,6 +19,7 @@ return {
                     config = {
                         workspaces = {
                             literature = "~/nextcloud/Literature",
+                            phd = "~/nextcloud/Notes/phd",
                         }
                     }
                 },

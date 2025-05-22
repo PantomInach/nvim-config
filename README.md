@@ -26,6 +26,7 @@ This is my neovim config. Nothing more to say.
 * [nabla](https://github.com/jbyuki/nabla.nvim)
 * [blink.cmp](https://github.com/Saghen/blink.cmp)
 * [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+* [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 
 # Dependencies 
 ## General Dependencies 

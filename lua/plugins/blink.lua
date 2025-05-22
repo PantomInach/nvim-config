@@ -21,7 +21,7 @@ return {
             nerd_font_variant = 'mono'
         },
         completion = { documentation = { auto_show = false, auto_show_delay_ms = 50 } },
-        signature = { enabled = true, window = { show_documentation = false } },
+        signature = { enabled = true, window = { show_documentation = true } },
         sources = {
             default = { 'lsp', 'path', 'snippets', 'buffer', 'ripgrep' },
             providers = {

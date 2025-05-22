@@ -96,6 +96,9 @@ return {
 
         local servers = {
             rust_analyzer = {
+                settings = {
+                    inlayHints = { closureCaptureHints = { enable = false } }
+                },
                 on_attach = function(client, bufnr)
                     vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
                 end

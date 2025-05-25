@@ -20,7 +20,14 @@ return {
         appearance = {
             nerd_font_variant = 'mono'
         },
-        completion = { documentation = { auto_show = false, auto_show_delay_ms = 50 } },
+        completion = {
+            documentation = {
+                auto_show = false,
+                auto_show_delay_ms = 50,
+                window = { boarder = "single" }
+            },
+            menu = { border = "single" }
+        },
         signature = { enabled = true, window = { show_documentation = true } },
         sources = {
             default = { 'lsp', 'path', 'snippets', 'buffer', 'ripgrep' },

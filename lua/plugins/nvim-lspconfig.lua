@@ -170,7 +170,7 @@ return {
         { "<leader>mf", "<cmd>LspTexlabForward<CR>" },
         -- diagnostic
         { "gd",         function() vim.lsp.buf.definition() end, },
-        { "K",          function() vim.lsp.buf.hover() end, },
+        { "K",          function() vim.lsp.buf.hover({ border = "single" }) end, },
         { "<leader>ld", function() vim.diagnostic.open_float() end, },
         { "<leader>lh", function() vim.diagnostic.goto_prev() end, },
         { "<leader>ll", function() vim.diagnostic.goto_next() end, },

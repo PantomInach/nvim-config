@@ -94,6 +94,13 @@ return {
         }
         local capabilities = require('blink.cmp').get_lsp_capabilities()
 
+        local function which_python()
+            local f = io.popen('env which python', 'r') or error("Fail to execute 'env which python'")
+            local s = f:read('*a') or error("Fail to read from io.popen result")
+            f:close()
+            return string.gsub(s, '%s+$', '')
+        end
+
         local servers = {
             rust_analyzer = {
                 settings = {
@@ -108,6 +115,8 @@ return {
                 settings = {
                     pylsp = {
                         plugins = {
+                            jedi = { enviroment = which_python() },
+                            -- jedi = { enviroment = "/usr/bin/python" },
                             black = { enabled = true },
                             autopep8 = { enabled = false },
                             yapf = { enabled = false },
@@ -132,6 +141,7 @@ return {
                         forwardSearch = { executable = "zathura", args = { "--synctex-forward", "%l:1:%f", "%p" } },
                         latexFormatter = "tex-fmt",
                         bibtexFormatter = "tex-fmt",
+                        formatterLineLength = 0,
                     },
                 },
             },

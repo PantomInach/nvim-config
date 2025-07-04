@@ -139,9 +139,10 @@ return {
                     texlab = {
                         build = { onSave = true },
                         forwardSearch = { executable = "zathura", args = { "--synctex-forward", "%l:1:%f", "%p" } },
-                        latexFormatter = "tex-fmt",
-                        bibtexFormatter = "tex-fmt",
-                        formatterLineLength = 0,
+                        -- latexFormatter = "tex-fmt",
+                        latexFormatter = "latexindent",
+                        -- bibtexFormatter = "tex-fmt",
+                        -- formatterLineLength = 0,
                     },
                 },
             },
@@ -165,6 +166,7 @@ return {
             'mypy',
             'black',
             'tex-fmt',
+            'latexindent',
             -- 'ltex-ls-plus'
         })
         require('mason-tool-installer').setup { ensure_installed = ensure_installed }

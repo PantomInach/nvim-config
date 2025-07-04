@@ -14,6 +14,16 @@ return {
                 },
             },
             languages = {
+                julia = {
+                    default_task = "run",
+                    tasks = {
+                        run = {
+                            command = "julia %",
+                            type = "shell",
+                            output = output_format,
+                        }
+                    }
+                },
                 python = {
                     default_task = "run",
                     tasks = {

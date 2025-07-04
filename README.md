@@ -28,6 +28,7 @@ This is my neovim config. Nothing more to say.
 * [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 * [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 * [nvim-lsp-endhints](https://github.com/chrisgrieser/nvim-lsp-endhints)
+* [mini.pairs](https://github.com/echasnovski/mini.pairs)
 
 # Dependencies 
 ## General Dependencies 

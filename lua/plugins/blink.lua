@@ -24,7 +24,7 @@ return {
             documentation = {
                 auto_show = false,
                 auto_show_delay_ms = 50,
-                window = { boarder = "single" }
+                window = { border = "single" }
             },
             menu = { border = "single" }
         },

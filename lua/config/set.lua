@@ -37,4 +37,5 @@ vim.g.icons_enabled = true
 
 vim.g.have_nerd_font = true
 
-vim.cmd("colorscheme decay")
+-- vim.cmd("colorscheme decay-default")
+vim.cmd("colorscheme catppuccin")

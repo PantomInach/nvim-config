@@ -39,4 +39,4 @@ vim.keymap.set("v", "<Tab>", ">gv")
 
 -- Unbind keymaps
 vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "q", "<nop>")
+vim.keymap.set("i", "<F1>", "<nop>")

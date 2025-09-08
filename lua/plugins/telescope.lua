@@ -59,9 +59,9 @@ return {
             }
         end },
         { '<leader>fw', function() require("telescope.builtin").live_grep() end, },
+        { '<leader>fs', function() require("telescope.builtin").lsp_dynamic_workspace_symbols() end, },
         { 'gr',         function() require("telescope.builtin").lsp_references() end, }, -- Does not override default binding
         { "<leader>lR", function() require("telescope.builtin").lsp_references() end, },
-        { "<leader>lw", function() require("telescope.builtin").lsp_dynamic_workspace_symbols() end, },
         { "<leader>lD", function() require("telescope.builtin").diagnostics() end, },
         -- thesaurus
         { "<leader>lt", "<cmd>Telescope thesaurus lookup<CR>" }

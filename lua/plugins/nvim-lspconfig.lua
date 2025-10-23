@@ -146,7 +146,7 @@ return {
                     },
                 },
             },
-            ltex = {},
+            ltex_plus = {},
             zls = {},
             lua_ls = {
                 settings = {

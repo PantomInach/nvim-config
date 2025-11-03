@@ -1,12 +1,8 @@
 return {
     "folke/trouble.nvim",
     -- dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-    },
+    opts = {},
     keys = {
-        { "<leader>t", function() require("trouble").toggle() end }
+        { "<leader>t", "<cmd>Trouble diagnostics toggle filter.severity=vim.diagnostic.severity.ERROR<cr>" }
     }
 }

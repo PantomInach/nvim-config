@@ -1,8 +1,9 @@
 return {
     'nvim-treesitter/nvim-treesitter',
+    lazy = false,
     build = ':TSUpdate',
     config = function()
-        require('nvim-treesitter.configs').setup({
+        require('nvim-treesitter').setup({
             ensure_installed = { "lua", "vim", "query", "python", "rust", "latex", "java", "bash", "markdown",
                 "zig", "norg", "norg_meta" },
 

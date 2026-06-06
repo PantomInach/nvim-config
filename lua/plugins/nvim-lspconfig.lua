@@ -167,6 +167,7 @@ return {
             'black',
             'tex-fmt',
             'latexindent',
+            'beautysh',
             -- 'ltex-ls-plus'
         })
         require('mason-tool-installer').setup { ensure_installed = ensure_installed }

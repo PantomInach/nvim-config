@@ -5,6 +5,7 @@ return {
             formatters_by_ft = {
                 python = { "isort", "black" },
                 markdown = { "mdsf" },
+                bash = { "beautysh" },
             },
             format_on_save = {
                 lsp_fallback = true,

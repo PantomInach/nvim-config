@@ -23,7 +23,7 @@ return {
                     -- theme = "dropdown",
                 },
                 lsp_references = {
-                    -- theme = "dropdown",
+                    theme = "dropdown",
                 },
                 lsp_dynamic_workspace_symbols = {
                     -- theme = "dropdown",

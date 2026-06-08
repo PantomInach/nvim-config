@@ -8,7 +8,8 @@ return {
             create_mappings = true,
             line_mapping = "gcc",
             operator_mapping = "gc",
-            comment_chunk_text_object = "ic",
+            -- comment_chunk_text_object = "ic",
+            comment_chunk_text_object = "gc",
             hook = nil,
         })
     end,

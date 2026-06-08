@@ -40,3 +40,7 @@ vim.keymap.set("v", "<Tab>", ">gv")
 -- Unbind keymaps
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("i", "<F1>", "<nop>")
+
+-- Commenting
+vim.keymap.set("n", "<leader>/", "gcc<cr>")
+vim.keymap.set("v", "/", "gc<cr>")
